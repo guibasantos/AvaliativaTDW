@@ -28,7 +28,7 @@ class App extends Component {
 
     const { email, senha } = this.state
 
-    if (email === emailValido && senha == senhaValida) {
+    if (email === emailValido && senha === senhaValida) {
       this.setState({ mensagem: 'Acessado com Sucesso' })
     } else {
       this.setState({ mensagem: 'Erro ao Acessar' })

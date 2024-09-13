@@ -18,7 +18,7 @@ jobs:
             
             - name: Run StandardJS Linter
               run: npx standard
-              
+
             - name: Run Supert Lint Code
               uses: github/super-linter@v4
         env:
