@@ -6,6 +6,7 @@ class App extends Component {
         this.state = {
             email: '',
             senha: '',
+            mensgem: '',
         };
     }
 
@@ -19,6 +20,16 @@ class App extends Component {
         this.setState({senha: event.target.value});
         console.log(event.target.value);
     };
+
+    validaLogin = (event) => {
+        event.preventDefault();
+
+        const emailValido = "validacao@email.com";
+        const senhaValida = "validacaoOK";
+
+        const {email, senha} = this.state;
+        
+    }
 
     render(){
         return(
