@@ -28,8 +28,13 @@ class App extends Component {
         const senhaValida = "validacaoOK";
 
         const {email, senha} = this.state;
-        
-    }
+
+        if (email === emailValido && senha === senhaValida) {
+            this.setState({mensgem: "Acessado com Sucesso"});
+        } else {
+            this.setState({mensgem: "Erro ao Acessar"});
+        }  
+    };
 
     render(){
         return(
