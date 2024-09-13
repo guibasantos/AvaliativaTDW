@@ -42,6 +42,8 @@ class App extends Component {
                         onChange= {this.entraSenha}
                         />
                     </label>
+                    <br />
+                    <button type= "submit">Acessar</button>
                 </form>
             </div>
         );
