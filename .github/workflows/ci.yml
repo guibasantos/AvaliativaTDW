@@ -1,0 +1,27 @@
+name: CI Lin Code and Test
+on: 
+    push:
+        branches:
+            - main
+    pull_request:
+        branches:
+            - main
+
+jobs:
+    lint:
+        name: Lint code
+        runs-on: ubuntu-latest
+        
+        steps:
+            - name: Checkout code
+              uses: actions/checkout@v3
+            
+            - name: Run StandardJS Linter
+              run: npx standard
+
+            - name: Run Supert Lint Code
+              uses: github/super-linter@v4
+        env:
+            GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
+            VALIDATE_JS: true
+            DEFAULT_BRANCH: main
