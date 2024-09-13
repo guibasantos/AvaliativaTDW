@@ -1,4 +1,4 @@
-name: CI Lin Code
+name: CI Lin Code and Test
 on: 
     push:
         branches:
@@ -16,6 +16,9 @@ jobs:
             - name: Checkout code
               uses: actions/checkout@v3
             
+            - name: Run StandardJS Linter
+              run: npx standard
+              
             - name: Run Supert Lint Code
               uses: github/super-linter@v4
         env:
