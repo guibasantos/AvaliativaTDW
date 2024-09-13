@@ -6,6 +6,7 @@ class App extends Component {
         this.state = {
             email: '',
             senha: '',
+            mensagem: '',
         };
     }
 
@@ -20,11 +21,26 @@ class App extends Component {
         console.log(event.target.value);
     };
 
+    validaLogin = (event) => {
+        event.preventDefault();
+
+        const emailValido = "validacao@email.com";
+        const senhaValida = "validacaoOK";
+
+        const {email, senha} = this.state;
+
+        if (email === emailValido && senha == senhaValida) {
+            this.setState({mensagem: "Acessado com Sucesso"});
+        } else {
+            this.setState({mensagem: "Erro ao Acessar"});
+        }
+    };
+
     render(){
         return(
             <div>
                 <h1>Login</h1>
-                <form>
+                <form onSubmit={this.validaLogin}>
                     <label>
                         E-mail:
                         <input
@@ -45,6 +61,7 @@ class App extends Component {
                     <br />
                     <button type= "submit">Acessar</button>
                 </form>
+                {this.state.mensagem && <p>{this.state.mensagem}</p>}
             </div>
         );
     }
