@@ -1,0 +1,23 @@
+name: CD
+on: 
+    push:
+        branches:
+            - main
+
+jobs:
+    deliver:
+        name: Lint code
+        runs-on: ubuntu-latest
+        
+        steps:
+            - name: Checkout code
+              uses: actions/checkout@v3
+            
+            - name: Simulando CD
+              uses: actions/upload-artifact@v3
+              with:
+                name: arquivo-de-teste
+                path: |
+                    '**/*.js'
+                    README.md
+                    
