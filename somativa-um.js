@@ -10,17 +10,17 @@ class App extends Component {
     }
   }
 
-  entraEmail = (event) => {
+  handleEntraEmail = (event) => {
     this.setState({ email: event.target.value })
     console.log(event.target.value)
   }
 
-  entraSenha = (event) => {
+  handleEntraSenha = (event) => {
     this.setState({ senha: event.target.value })
     console.log(event.target.value)
   }
 
-  validaLogin = (event) => {
+  handleValidaLogin = (event) => {
     event.preventDefault()
 
     const emailValido = 'validacao@email.com'
@@ -39,13 +39,13 @@ class App extends Component {
     return (
       <div>
         <h1>Login</h1>
-        <form onSubmit={this.validaLogin}>
+        <form onSubmit={this.handleValidaLogin}>
           <label>
             E-mail:
             <input
               type='email'
               value={this.state.email}
-              onChange={this.entraEmail}
+              onChange={this.handleEntraEmail}
             />
           </label>
           <br />
@@ -54,7 +54,7 @@ class App extends Component {
             <input
               type='password'
               value={this.state.senha}
-              onChange={this.entraSenha}
+              onChange={this.handleEntraSenha}
             />
           </label>
           <br />
