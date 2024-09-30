@@ -1,27 +1,45 @@
-name: CI Lin Code and Test
+name: CI Lint Code and Test
 on: 
-    push:
-        branches:
-            - main
-    pull_request:
-        branches:
-            - main
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
 
 jobs:
-    lint:
-        name: Lint code
-        runs-on: ubuntu-latest
-        
-        steps:
-            - name: Checkout code
-              uses: actions/checkout@v3
-            
-            - name: Run StandardJS Linter
-              run: npx standard
+  lint:
+    name: Lint code
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+      
+      - name: Run StandardJS Linter
+        run: npx standard
 
-            - name: Run Supert Lint Code
-              uses: github/super-linter@v4
+      - name: Run Super Linter
+        uses: github/super-linter@v4
         env:
-            GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
-            VALIDATE_JS: true
-            DEFAULT_BRANCH: main
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          VALIDATE_JS: true
+          DEFAULT_BRANCH: main
+
+  test:
+    name: Test and Build
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Use Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20.x'
+          
+      - run: npm install
+
+      - run: npm run build --if-present
+
+      - run: npm test
