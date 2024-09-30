@@ -3,6 +3,8 @@ import { render, fireEvent, screen } from '@testing-library/react';
 import '@testing-library/jest-dom/extend-expect';
 import App from './App';
 
+//colocando um comentário para fazer um commit porque deu erro
+
 describe('Teste do componente App', () => {
 
   test('deve renderizar o formulário de login corretamente', () => {
