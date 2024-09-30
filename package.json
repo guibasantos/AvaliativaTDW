@@ -1,0 +1,20 @@
+{
+  "name": "avaliativatdw",
+  "version": "1.0.0",
+  "description": "Atividade avaliativa da disciplina de Tecnologia para Desenvolvimento WEB",
+  "main": "App.testes.js",
+  "scripts": {
+    "test": "jest", 
+    "build": "webpack" 
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "react": "^18.0.0" 
+  },
+  "devDependencies": {
+    "jest": "^29.0.0", 
+    "webpack": "^5.0.0" 
+  }
+}
