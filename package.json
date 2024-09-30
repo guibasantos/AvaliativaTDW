@@ -4,8 +4,8 @@
   "description": "Atividade avaliativa da disciplina de Tecnologia para Desenvolvimento WEB",
   "main": "App.testes.js",
   "scripts": {
-    "test": "jest", 
-    "build": "webpack" 
+    "test": "jest"
+
   },
   "keywords": [],
   "author": "",
