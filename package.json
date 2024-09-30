@@ -2,7 +2,7 @@
   "name": "avaliativatdw",
   "version": "1.0.0",
   "description": "Atividade avaliativa da disciplina de Tecnologia para Desenvolvimento WEB",
-  "main": "App.testes.js",
+  "main": "App.test.js",
   "scripts": {
     "test": "jest"
   },
